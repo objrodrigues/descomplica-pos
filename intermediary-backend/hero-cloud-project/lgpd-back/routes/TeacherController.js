@@ -6,7 +6,8 @@ let router = express.Router();
 router.post("/addTeacher", async function (req, res) {
     const TeacherModel = {
         name: req.body.name,
-    }
+        course_id: req.body.course_id
+    };
 
     const teacher = await teacherService.saveTeacher(TeacherModel);
     return res.status(200).json(teacher);
@@ -30,7 +31,8 @@ router.delete("/deleteTeacher/:id", async function (req, res) {
 router.put("/updateTeacher/:id", async function (req, res) {
     const TeacherModel = {
         name: req.body.name,
-    }
+        course_id: req.body.course_id
+    };
 
     const teacher = await teacherService.updateTeacherById(red.params.id, TeacherModel);
     return res.status(200).json(teacher);

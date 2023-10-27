@@ -6,7 +6,7 @@ let router = express.Router();
 router.post("/addCourse", async function (req, res) {
     const CourseModel = {
         name: req.body.name,
-    }
+    };
 
     const course = await courseService.saveEvaluation(CourseModel);
     return res.status(200).json(course);
@@ -30,7 +30,7 @@ router.delete("/deleteCourse/:id", async function (req, res) {
 router.put("/updateCourse/:id", async function (req, res) {
     const CourseModel = {
         name: req.body.name,
-    }
+    };
 
     const course = await courseService.updateCoursenById(red.params.id, CourseModel);
     return res.status(200).json(course);

@@ -9,7 +9,7 @@ router.post("/addUser", async function (req, res) {
         last_name: req.body.last_name,
         email: req.body.email,
         gender: req.body.gender
-    }
+    };
 
     const user = await userService.saveUser(UserModel);
     return res.status(200).json(user);
@@ -36,7 +36,7 @@ router.put("/updateUser/:id", async function (req, res) {
         last_name: req.body.last_name,
         email: req.body.email,
         gender: req.body.gender
-    }
+    };
 
     const user = await userService.updateUserById(red.params.id, UserModel);
     return res.status(200).json(user);
